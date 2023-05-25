@@ -30,7 +30,7 @@ DDDM-VC audio demo page
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#m2m">Many-to-Many VC</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zeroshot">Zero-shot VC</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zero_crosslingual">Zero-shot Cross-lingual VC</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zero_multispkTTS">DDDM-TTS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#dddm_tts">DDDM-TTS</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audio_mixer">DDDM-Mixer</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation">Ablation Study</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#control">Style Control</a></li>
@@ -570,7 +570,7 @@ DDDM-VC audio demo page
           <div class="container">
             <div class="text-center">
               <h2 class="page-section-heading d-inline-block">Zero-shot Cross-lingual Voice Conversion</h2>
-              <p class="pre-wrap lead">Unseen language from the CSS10 multi-lingual dataset</p>
+              <p class="pre-wrap lead">Unseen lagneguage and unseen speaker from the CSS10 multi-lingual dataset</p>
             </div>
           
             <div class="divider-custom divider-light">
@@ -773,7 +773,7 @@ DDDM-VC audio demo page
           </div>
         </section>
         
-        <section class="page-section bg-info text-white mb-0" id="zero_multispkTTS">
+        <section class="page-section bg-info text-white mb-0" id="dddm_tts">
           <div class="container">
             <div class="text-center">
               <h2 class="page-section-heading d-inline-block">DDDM-TTS</h2>
@@ -813,9 +813,8 @@ DDDM-VC audio demo page
                     
                     <table class="table table-responsive align-content-center"  style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
                       <thead><tr>
-                        <th colspan="4" style="width: 80%"><em>Sentence 2</em><p></p><p><em>Deprived of the objects of both intellect and emotion, he could not proceed to his work. </em></p></th>
-     
-                      </tr></thead>
+                        <th colspan="4" style="width: 60%"><em>Sentence 2</em><p></p><p><em>Deprived of the objects of both intellect and emotion, he could not proceed to his work. </em></p>
+                        </th></tr></thead>
 
                       <tbody>
                         <tr>
@@ -902,7 +901,7 @@ DDDM-VC audio demo page
 
                     <table class="table table-responsive align-content-center"  style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
                       <thead><tr>
-                        <th colspan="4" style="width: 80%"><em>Sentence 5</em><p></p><p><em>In modern times the sultans or rulers of Turkey have been commonly regarded as the caliphs. </em></p>
+                        <th colspan="4" style="width: 60%"><em>Sentence 5</em><p></p><p><em>In modern times the sultans or rulers of Turkey have been commonly regarded as the caliphs. </em></p>
                         </th>
                       </tr></thead>
 
@@ -987,7 +986,8 @@ DDDM-VC audio demo page
           <div class="container">
             <div class="text-center">
               <h2 class="page-section-heading d-inline-block">DDDM-Mixer</h2>
-              <p class="pre-wrap lead">Audio Mixing</p>
+              <p class="pre-wrap lead">Audio Mixing <br> Mix synthesized sound and speech where the original audio does not exist in the desired ratio.
+              Sound audio was generated using AudioLDM [H. Liu et al., 2023], and speech audio was generated using our DDDM-VC. </p>
             </div>
 
             <div class="divider-custom divider-light">
@@ -997,38 +997,61 @@ DDDM-VC audio demo page
                   <div class="col-lg-12 ml-auto">
                     <table class="table table-responsive align-content-center"  style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
                       <thead><tr>
-                        <th style="width: 22%"> Source Speaker </th>
-                        <th style="width: 22%"> Target Speaker</th>
-                        <th style="width: 23%">  </th>
-                        <th style="width: 22%">         </th>
-                        <th style="width: 1%">         </th>
+                        <th style="width: 33%"> Synthesized Sound Audio  </th>
+                        <th style="width: 33%"> Synthesized Speech Audio </th> 
+                        <th style="width: 33%"> Mixed Audio (Ours)  </th>
+                        <th style="width: 1%"></th>
                       </tr></thead>
                     
                       <tbody>
                         <tr>
-                          <td><p></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <td><p>Techno music with a strong, upbeat tempo and high melodic riffs</p>
+                            <audio id="player" controls><source src="audio/mixer/sound/sound1.wav" type="audio/wav"></audio>
                           </td>
-                          <td><p></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <td><p>Converted voice <br> (Female) </p>
+                            <audio id="player" controls><source src="audio/mixer/speech/speech1.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p><br></p>
+                            <audio id="player" controls><source src="audio/mixer/mix/mixer_sound1_speech1.wav" type="audio/wav"></audio>
                           </td><td></td>
-                          </tr> 
+                        </tr> 
+
                         <tr>
-                          <td><p></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <td><p>A capella<br><br></p>
+                            <audio id="player" controls><source src="audio/mixer/sound/sound2.wav" type="audio/wav"></audio>
                           </td>
-                          <td><p></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <td><p>Converted voice <br> (Male) </p>
+                            <audio id="player" controls><source src="audio/mixer/speech/speech2.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p><br></p>
+                            <audio id="player" controls><source src="audio/mixer/mix/mixer_sound2_speech2.wav" type="audio/wav"></audio>
                           </td><td></td>
-                          </tr>
+                        </tr>
+
                         <tr>
-                          <td><p></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <td><p>Chopping potatos on a metal table.<br><br></p>
+                            <audio id="player" controls><source src="audio/mixer/sound/sound3.wav" type="audio/wav"></audio>
                           </td>
-                          <td><p></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <td><p>Converted voice <br> Gollum </p>
+                            <audio id="player" controls><source src="audio/mixer/speech/speech3.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p><br></p>
+                            <audio id="player" controls><source src="audio/mixer/mix/mixer_sound3_speech3.wav" type="audio/wav"></audio>
                           </td><td></td>
-                          </tr>
+                        </tr>
+
+                        <tr>
+                          <td><p>The sound of a steam engine.<br><br></p>
+                            <audio id="player" controls><source src="audio/mixer/sound/sound4.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>Converted voice <br> (Male) </p>
+                            <audio id="player" controls><source src="audio/mixer/speech/speech4.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p><br></p>
+                            <audio id="player" controls><source src="audio/mixer/mix/mixer_sound4_speech4.wav" type="audio/wav"></audio>
+                          </td><td></td>
+                        </tr>
+                          
                       </tbody> 
                     </table>
                   </div>
