@@ -26,6 +26,7 @@ DDDM-VC audio demo page
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">Abstract</a> -->
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#rebuttal">Rebuttal</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#oneshot">One-shot Speaker Adaptation</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#m2m">Many-to-Many VC</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zeroshot">Zero-shot VC</a></li>
@@ -43,42 +44,10 @@ DDDM-VC audio demo page
                 <h1 class="masthead-heading mb-0">DDDM-VC: Decoupled Denoising Diffusion Models with Disentangled Representation and Prior Mixup for Verified Robust Voice Conversion</h1>
 		            <p class="pre-wrap lead">&nbsp;</p>
                 <img src="img/dddm_vc_project.png" alt="main" style="max-width: 100%; height: auto;"> 
-                <em>Overall framework of DDDM-VC</em><p></p><br>
-                <!-- <table width=100%>
-                  <tr>
-                     <h4><center> Reverse process of each attribute denoiser </center></h4><br>
-                     <td width=50%><img alt="ftr" src="img/ftr_dec.gif" style="max-width: 100%; height: auto;">
-                     <em><p align="center">Filter attribute denoising process </p></em></td>
-                     <td width=50%><img alt="src" src="img/src_dec.gif" style="max-width: 100%; height: auto;">
-                     <em><p align="center">Source attribute denoising process </p></em></td>
-                  </tr>
-               </table> -->
+                <em>Overall framework of DDDM-VC</em><p></p><br> 
             </div>
         </header>
 
-        <!-- <section class="page-section alert-secondary portfolio" id="abstract">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Abstract</h2>
-                </div>
-                <div class="divider-custom">
-                    <div class="divider-custom"></div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-12 ml-auto">
-                      <p class="pre-wrap lead">Diffusion-based generative models have exhibited powerful generative performance in recent years. However, as many attributes exist in the data distribution and owing to several limitations of sharing the model parameters across all levels of the generation process, it remains challenging to control specific styles for each attribute. To address the above problem, this paper presents decoupled denoising diffusion models (DDDMs) with disentangled representations, which can control the style for each attribute in generative models. We apply DDDMs to voice conversion (VC) tasks to address the challenges of disentangling and controlling each speech attribute (e.g., linguistic information, intonation, and timbre). First, we use a self-supervised representation to disentangle the speech representation. Subsequently, the DDDMs are applied to resynthesize the speech from the disentangled representations for denoising with respect to each attribute. Moreover, we also propose the prior mixup for robust voice style transfer, which uses the converted representation of the mixed style as a prior distribution for the diffusion models. The experimental results reveal that our method outperforms publicly available VC models. Furthermore, we show that our method provides robust generative performance regardless of the model size. </p>
-                        <p class="pre-wrap lead">&nbsp;</p>
-                        <p class="pre-wrap lead">We compare DDDM-VC with several Voice Conversion models as:</p>
-                        <p class="pre-wrap lead">  1. AutoVC [K. Qian et al., 2019] : <a href="https://auspicious3000.github.io/autovc-demo/">[Official Demo page]</a></p>
-                        <p class="pre-wrap lead">  2. VoiceMixer [S.-H. Lee et al., 2021]: <a href="https://anonymous-speech.github.io/voicemixer/index.html">[Official Demo page]</a></p>
-                        <p class="pre-wrap lead">  3. Speech Resynthesis [A. Polyak et al., 2021]: <a href="https://speechbot.github.io/resynthesis/">[Official Demo page]</a></p>
-                        <p class="pre-wrap lead">  4. DiffVC [V. Popov et al., 2022]:  <a href="https://diffvc-fast-ml-solver.github.io/">[Official Demo page]</a></p>
-	                      <p class="pre-wrap lead">&nbsp;</p>
-	                    </div>
-                    </div>         
-                </div>
-            </div>
-        </section> -->
         <style>
           tr, td {
             text-align:center;
@@ -90,10 +59,169 @@ DDDM-VC audio demo page
             font-size: 13pt;
           }
         </style>
-        
-        <!-- <div style="background-color: hsl(0.15turn, 50%, 75%);"> -->
-        <!-- <section class="page-section text-white mb-0" id="oneshot" style="background-color:#56799C" >	 -->
-        <!-- <section class="page-section text-white mb-0" id="oneshot" style="background-color:#6d819c" >	 -->
+         
+       <section class="page-section text-white mb-0" id="rebuttal" style="background-color: #0e1136;">
+ 
+          <div class="container">
+            <div class="text-center">
+              <h2 class="page-section-heading d-inline-block">Rebuttal</h2>
+              <p class="pre-wrap lead">
+                <strong>DDDM: 16,000 Hz / YourTTS: 16,000 Hz / NANSY: 22,050 Hz / NANSY++: 44,100 Hz</strong>
+                We conducted a zero-shot VC test using zero-shot samples in the NANSY and NANSY++ official demo page.
+                NANSY and NANSY++ are models trained with higher sampling rate data, <br> and for comparison, we have downsampled the samples to 16kHz.</p>
+            </div>
+
+            <div class="divider-custom divider-light"> </div>
+              <div class="row">
+                  <div class="col-lg-12 ml-auto">
+                    <table class="table table-responsive align-content-center" style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
+                      <thead><tr>
+                        <th style="width:8%">Source Speaker</th>
+                        <th style="width:8%">Target Speaker</th>
+                        <th style="width: 23%"> Converted</th>
+                        <th style="width: 22%">         </th>
+                        <th style="width: 1%">         </th>
+                      </tr></thead>
+                      
+                      <tbody>
+                        <tr>
+                          <td rowspan="1" style="vertical-align: top;"><p> male <br> 1089_134691_000053_000001 </p>
+                            <audio id="player" controls ><source src="audio/comparison/src/src2.wav" type="audio/wav"></audio>
+                          </td>
+                          <td rowspan="1" style="vertical-align: top;"><p> male <br> 2830_3979_000018_000009 </p>
+                            <audio id="player" controls><source src="audio/comparison/tar/tar2.wav" type="audio/wav"></audio>
+                          </td>
+
+                          <td><p><strong>DDDM-VC</strong><br>16,000 Hz<br></p>
+                            <audio id="player" controls><source src="audio/comparison/dddm/converted_2.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>YourTTS<br>16,000 Hz<br></p>
+                            <audio id="player" controls><source src="audio/comparison/yourtts/converted_2.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>NANSY<br>22,050 Hz<br></p>
+                            <audio id="player" controls><source src="audio/comparison/nansy/converted_2.wav" type="audio/wav"></audio>
+                          </td>
+                        </tr>  
+
+                        <tr>
+                          <td rowspan="1" style="vertical-align: top;"><p> male <br> 1089_134686_000002_000000 </p>
+                            <audio id="player" controls ><source src="audio/comparison/src/src4.wav" type="audio/wav"></audio>
+                          </td>
+                          <td rowspan="1" style="vertical-align: top;"><p> female <br> 121_121726_000007_000003 </p>
+                            <audio id="player" controls><source src="audio/comparison/tar/tar4.wav" type="audio/wav"></audio>
+                          </td>
+
+                          <td><p><strong>DDDM-VC</strong><br><br></p>
+                            <audio id="player" controls><source src="audio/comparison/dddm/converted_4.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>YourTTS<br><br></p>
+                            <audio id="player" controls><source src="audio/comparison/yourtts/converted_4.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>NANSY<br><br></p>
+                            <audio id="player" controls><source src="audio/comparison/nansy/converted_4.wav" type="audio/wav"></audio>
+                          </td>
+                        </tr>  
+
+                        <tr>
+                          <td rowspan="1" style="vertical-align: top;"><p> female <br> 3570_5695_000004_000001 </p>
+                            <audio id="player" controls ><source src="audio/comparison/src/src6.wav" type="audio/wav"></audio>
+                          </td>
+                          <td rowspan="1" style="vertical-align: top;"><p> female <br> 1284_1180_000008_000001 </p>
+                            <audio id="player" controls><source src="audio/comparison/tar/tar6.wav" type="audio/wav"></audio>
+                          </td>
+
+                          <td><p><strong>DDDM-VC</strong><br><br></p>
+                            <audio id="player" controls><source src="audio/comparison/dddm/converted_6.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>YourTTS<br><br></p>
+                            <audio id="player" controls><source src="audio/comparison/yourtts/converted_6.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>NANSY<br><br></p>
+                            <audio id="player" controls><source src="audio/comparison/nansy/converted_6.wav" type="audio/wav"></audio>
+                          </td>
+                        </tr>    
+
+                        <tr>
+                          <td rowspan="1" style="vertical-align: top;"><p> female <br> 5142_36600_000010_000004 </p>
+                            <audio id="player" controls ><source src="audio/comparison/src/src8.wav" type="audio/wav"></audio>
+                          </td>
+                          <td rowspan="1" style="vertical-align: top;"><p> male <br> 7176_88083_000006_000004 </p>
+                            <audio id="player" controls><source src="audio/comparison/tar/tar8.wav" type="audio/wav"></audio>
+                          </td>
+
+                          <td><p><strong>DDDM-VC</strong><br><br></p>
+                            <audio id="player" controls><source src="audio/comparison/dddm/converted_8.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>YourTTS<br><br></p>
+                            <audio id="player" controls><source src="audio/comparison/yourtts/converted_8.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>NANSY<br><br></p>
+                            <audio id="player" controls><source src="audio/comparison/nansy/converted_8.wav" type="audio/wav"></audio>
+                          </td>
+                        </tr>    
+                      </tbody> 
+                    </table>
+                  </div>
+                </div> 
+
+
+                <div class="row">
+                  <div class="col-lg-12 ml-auto">
+                    <table class="table table-responsive align-content-center" style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
+                      <thead><tr>
+                        <th style="width:8%">Source Speaker</th>
+                        <th style="width:8%">Target Speaker</th>
+                        <th style="width: 23%"> Converted</th>
+                        <th style="width: 22%">         </th>
+                        <th style="width: 1%">         </th>
+                      </tr></thead>
+                      
+                      <tbody>
+                        <tr>
+                          <td rowspan="1" style="vertical-align: top;"><p> female <br> p225 </p>
+                            <audio id="player" controls ><source src="audio/comparison2/src/src2.wav" type="audio/wav"></audio>
+                          </td>
+                          <td rowspan="1" style="vertical-align: top;"><p> female <br> p335 </p>
+                            <audio id="player" controls><source src="audio/comparison2/tar/tar2.wav" type="audio/wav"></audio>
+                          </td>
+
+                          <td><p><strong>DDDM-VC</strong><br>16,000 Hz<br></p>
+                            <audio id="player" controls><source src="audio/comparison2/dddm/converted_2.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>YourTTS<br>16,000 Hz<br></p>
+                            <audio id="player" controls><source src="audio/comparison2/yourtts/converted_2.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>NANSY++<br>44,100 Hz<br></p>
+                            <audio id="player" controls><source src="audio/comparison2/nansypp/converted_2.wav" type="audio/wav"></audio>
+                          </td>
+                        </tr>  
+
+                        <tr>
+                          <td rowspan="1" style="vertical-align: top;"><p> male <br> p347 </p>
+                            <audio id="player" controls ><source src="audio/comparison2/src/src4.wav" type="audio/wav"></audio>
+                          </td>
+                          <td rowspan="1" style="vertical-align: top;"><p> male <br> p326 </p>
+                            <audio id="player" controls><source src="audio/comparison2/tar/tar4.wav" type="audio/wav"></audio>
+                          </td>
+
+                          <td><p><strong>DDDM-VC</strong><br><br></p>
+                            <audio id="player" controls><source src="audio/comparison2/dddm/converted_4.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>YourTTS<br><br></p>
+                            <audio id="player" controls><source src="audio/comparison2/yourtts/converted_4.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>NANSY++<br><br></p>
+                            <audio id="player" controls><source src="audio/comparison2/nansypp/converted_4.wav" type="audio/wav"></audio>
+                          </td>
+                        </tr>  
+ 
+                      </tbody> 
+                    </table>
+                  </div>
+                </div> 
+            </div>
+        </section>
+
         <section class="page-section bg-info text-white mb-0" id="oneshot">	
             <div class="container">
               <div class="text-center">
@@ -570,7 +698,7 @@ DDDM-VC audio demo page
           <div class="container">
             <div class="text-center">
               <h2 class="page-section-heading d-inline-block">Zero-shot Cross-lingual Voice Conversion</h2>
-              <p class="pre-wrap lead">Unseen language and unseen speaker from the CSS10 multi-lingual dataset</p>
+              <p class="pre-wrap lead">Unseen lagneguage and unseen speaker from the CSS10 multi-lingual dataset</p>
             </div>
           
             <div class="divider-custom divider-light">
